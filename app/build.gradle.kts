@@ -13,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId = "com.jorgeoviedolab4"
-        minSdk = 24
+        minSdk = 29
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -55,11 +55,20 @@ android {
 
 dependencies {
 
+        implementation("androidx.work:work-runtime-ktx:2.7.1")
+        implementation("com.google.code.gson:gson:2.8.8")
+        implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
+        implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.4.0")
+
+
+
     implementation("com.google.maps.android:maps-compose:2.5.0")
 
     implementation(libs.androidx.runtime.livedata)
     implementation(libs.play.services.maps)
-    implementation(libs.play.services.location)
+    //implementation(libs.play.services.location)
+    implementation(libs.play.services.location.v2101)
+
     val work_version = "2.9.1"
     implementation("androidx.work:work-runtime-ktx:$work_version")
 

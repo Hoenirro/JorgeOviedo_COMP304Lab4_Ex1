@@ -1,4 +1,4 @@
-package com.jorgeoviedolab4.RoomDB
+package com.jorgeoviedolab4.roomDB
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

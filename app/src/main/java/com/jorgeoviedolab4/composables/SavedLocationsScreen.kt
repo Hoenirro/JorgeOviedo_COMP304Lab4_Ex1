@@ -1,4 +1,4 @@
-package com.jorgeoviedolab4
+package com.jorgeoviedolab4.composables
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -12,7 +12,7 @@ import androidx.compose.material.icons.filled.Delete
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.jorgeoviedolab4.ViewModel.SavedLocationsViewModel
+import com.jorgeoviedolab4.viewModel.SavedLocationsViewModel
 
 @Composable
 fun SavedLocationsScreen(navController: NavController, viewModel: SavedLocationsViewModel = viewModel()) {

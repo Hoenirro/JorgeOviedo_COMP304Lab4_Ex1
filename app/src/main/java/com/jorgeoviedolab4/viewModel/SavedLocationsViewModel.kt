@@ -1,11 +1,11 @@
-package com.jorgeoviedolab4.ViewModel
+package com.jorgeoviedolab4.viewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.jorgeoviedolab4.RoomDB.MyLocation
-import com.jorgeoviedolab4.RoomDB.LocationDatabase
+import com.jorgeoviedolab4.roomDB.MyLocation
+import com.jorgeoviedolab4.roomDB.LocationDatabase
 import kotlinx.coroutines.launch
 
 class SavedLocationsViewModel(application: Application) : AndroidViewModel(application) {
@@ -28,5 +28,10 @@ class SavedLocationsViewModel(application: Application) : AndroidViewModel(appli
         viewModelScope.launch {
             locationDao.updateLocation(myLocation)
         }
+    }
+
+    fun getLocationByGeofenceId(geofenceId: String): MyLocation? {
+        val coordinates = geofenceId.removePrefix("GEOFENCE_ID_").split("_").map { it.toDouble() }
+        return locationDao.getLocationByCoordinates(coordinates[0], coordinates[1])
     }
 }
